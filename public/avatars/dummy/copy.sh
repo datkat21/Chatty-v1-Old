@@ -1,0 +1,1 @@
+cp dummy.svgg dummy.svg

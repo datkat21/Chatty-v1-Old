@@ -1,0 +1,179 @@
+:root {
+  --background-root: #1e1e1e;
+  --background-default: #252526;
+  --background-higher: #303030;
+  --background-highest: #00548d;
+  --background-overlay: #ffffff22;
+  --foreground-default: #fff;
+  --foreground-dimmer: #aaa;
+  --foreground-dimmest: #888;
+  --foreground-warning: #cdbc43;
+  --foreground-error: #c9474a;
+  --outline-dimmest: #474747;
+  --outline-dimmer: #474747;
+  --outline-default: #474747;
+  --outline-stronger: #474747;
+  --outline-strongest: #474747;
+  --accent-primary-dimmest: #04395e;
+  --accent-primary-dimmer: #06588e;
+  --accent-primary-default: #0e639c;
+  --accent-primary-stronger: #2b9eec;
+  --accent-primary-strongest: #ffffff;
+  --purple-default: #7b22f4;
+  --radius: 8px;
+  --radius-alt: 8px;
+  --radius-alt-2: 4px;
+  --spacer-sm: 8px;
+  --spacer-md: 16px;
+  --padding-sm: 4px;
+  --padding-sd: 6px;
+  --padding-md: 8px;
+  --padding-lg: 12px;
+  --padding-xl: 16px;  
+  --sidebar-width: 48px;
+  --mblist-width: 150px;
+  --grid-areas-desktop: 'sb ch mb' 'sb in mb';
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: var(--background-root);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+}
+
+* { box-sizing: border-box; }
+
+.single-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.padded {
+  padding: var(--padding-xl)
+}
+.padded.no-m * {margin:var(--spacer-sm) !important}
+
+.small-label {
+  color: var(--foreground-dimmest);
+  font-size: 0.8em;
+  margin-left: 4px;
+}
+
+a,a:visited {
+  color: var(--accent-primary-default);
+}
+
+a:hover {
+  color: var(--accent-primary-stronger);
+}
+
+.root-panel {
+  display: grid;
+  grid-template-areas: var(--grid-areas-desktop);
+  gap: var(--spacer-md);
+  flex: 1;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: var(--sidebar-width) 1fr var(--mblist-width);
+  padding: var(--padding-xl);
+}
+
+.panel {
+  border: 1px solid var(--outline-default);
+  background-color: var(--background-default);
+  border-radius: var(--radius);
+}
+
+.sidebar {
+  grid-area: sb;
+}
+
+.main {
+  grid-area: ch;
+  padding: var(--padding-xl);
+  overflow: auto;
+}
+
+.input {
+  background-color: var(--background-higher);
+  grid-area: in;
+  padding: var(--padding-lg);
+  display: flex;
+}
+
+.users {
+  grid-area: mb;
+}
+
+.message .content p {
+  margin: 4px 0;
+}
+
+/* more todo as i add more parts to the UI
+planned UI elements:
+  ✖ button
+  ✔ badge
+  ✔ avatar
+  ✖ label
+  ✔ input/textarea
+*/
+
+.badge {
+  padding: var(--padding-sd) var(--padding-lg);
+  border-radius: 8px;
+  border: 1px solid #fff4;
+  background-color: var(--background-highest);
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #fff4;
+  background-image: var(--url);
+  background-size: cover;
+  overflow: clip;
+}
+
+.message {
+  display: grid;
+  grid-template-areas:
+      'avatar meta'
+      'avatar content';
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--spacer-sm);
+  margin: 16px 0;
+}
+
+.message .avatar {
+  grid-area: avatar;
+}
+.message .meta {
+  grid-area: meta;
+  display: flex;
+  gap: var(--spacer-sm);
+}
+.message .meta .time {
+  color: var(--foreground-dimmest);
+}
+.message .content {
+  grid-area: content;
+}
+
+textarea {
+  appearance: none;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  border: none;
+  resize: none;
+  outline: none;
+  height: 34px;
+  flex: 1;
+}

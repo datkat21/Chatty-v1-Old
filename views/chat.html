@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatty</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/chat-client.js"></script>
+  <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!--
+  planned ui layout
+  +-------------------------------+
+  | ss ccccccccccccccccccccc aaaa |
+  | ss ccccccccccccccccccccc aaaa |
+  | ss ccccccccccccccccccccc aaaa |
+  | ss ccccccccccccccccccccc aaaa |
+  | ss iiiiiiiiiiiiiiiiiiiii aaaa |
+  +-------------------------------+
+  s - sidebar
+  c - chat panel
+  a - online users list
+  i - text input panel
+
+  this is actually easily accomplished with css grid layouts less go
+  im going to go grab the grid css code real quick
+  -->
+  <div class="root-panel">
+    <section class="sidebar panel">
+      Side
+    </section>
+    <section class="main panel">
+      <div id="status">Connecting...<br>If nothing happens after a while, check your connection.</div>
+      <div id="messages"></div>
+    </section>
+    <section class="input panel">
+      <textarea id="chat-input"></textarea>
+    </section>
+    <section class="users panel">
+      Users panel
+    </section>
+  </div>
+</body>
+</html>

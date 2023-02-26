@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html class="w-full h-full" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://replit.com/public/js/repl-auth-v2.js"></script>
+  <link rel="shortcut icon" href="/avatars/chatty_circle.svg" type="image/x-icon">
+  <title>Chatty | Login with Provider</title>
+</head>
+<body class="w-full h-full bg-[#10121B] flex flex-col items-center justify-center text-white">
+  <% if (message !== null) { %>
+  <span class="p-4 text-center text-2xl"><%- message %></span>
+  <% } %>
+	<div class="p-[25px] rounded-md bg-[#171B27] text-white">
+		<h1 class="font-semibold text-2xl">Welcome to <span class="font-bold"><span class="text-[#546AB6]">Chat</span>ty</span></h1>
+		<div onclick="LoginWithReplit()" class="cursor-pointer px-10 py-3 mt-3 rounded-full hover:bg-slate-700 transition-all bg-[#23293C] font-semibold text-xl flex flex-row items-center gap-3"><span>
+      <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.49997 6.24593H1.65436C1.07873 6.24593 0.622192 5.77947 0.622192 5.21377V1.77984C0.622192 1.20421 1.08865 0.747681 1.65436 0.747681H6.46781C7.04344 0.747681 7.49997 1.21414 7.49997 1.77984V6.24593Z" fill="white"/>
+<path d="M13.3456 11.7441H7.5V6.23596H13.3456C13.9113 6.23596 14.3778 6.70242 14.3778 7.26812V10.712C14.3778 11.2876 13.9113 11.7441 13.3456 11.7441Z" fill="white"/>
+<path d="M6.46781 17.2523H1.65436C1.08865 17.2523 0.622192 16.7859 0.622192 16.2202V12.7763C0.622192 12.2106 1.08865 11.7441 1.65436 11.7441H7.49997V16.2202C7.49997 16.7859 7.03351 17.2523 6.46781 17.2523Z" fill="white"/></svg></span>
+      Login with Replit</div>
+	</div>
+</body>
+</html>
